@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Router, browserHistory, Route } from "react-router";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HeaderTitle from "./Component/HeaderTitle";
 import LoginPage from "./Component/LoginPage";
 import ForgotPage from "./Component/ForgotPage";
@@ -13,10 +13,16 @@ class App extends Component {
     return (
       <div className="App">
         <HeaderTitle />
-        <Router history={browserHistory}>
-          <Route path="/" component={LoginPage} exact />
-          <Route path="/ForgotPage" component={ForgotPage} exact />
-          <Route path="/RegistrationForm" component={RegistrationForm} exact />
+        <Router>
+          <Switch>
+            <Route path="/" component={LoginPage} exact />
+            <Route path="/ForgotPage" component={ForgotPage} exact />
+            <Route
+              path="/RegistrationForm"
+              component={RegistrationForm}
+              exact
+            />
+          </Switch>
         </Router>
       </div>
     );

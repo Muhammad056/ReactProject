@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
-import classnames from "classnames";
+import { Link } from "react-router-dom";
+// import classnames from "classnames";
 
 class LoginPage extends Component {
   constructor(props) {
@@ -20,24 +20,9 @@ class LoginPage extends Component {
     this.setState({ Password: e.target.value });
   };
 
-  valdaitoin = () => {
-    let errorss = false;
-    if (this.state.email < 5) {
-      errorss = true;
-    }
-
-    return errorss;
-  };
-
   loginPage = e => {
     console.log(this.state);
-    const err = valdaitoin();
-    if (!err) {
-      this.setState({
-        email: "",
-        Password: ""
-      });
-    }
+
     e.preventDefault();
   };
 
