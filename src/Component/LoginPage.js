@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const LoginPage = () => {
   return (
@@ -37,7 +38,7 @@ const LoginPage = () => {
             <input
               type="text"
               name="Email"
-              className="form-control ml-5"
+              className="form-control ml-5 "
               placeholder="Enter Email"
               value=""
             />
@@ -47,11 +48,18 @@ const LoginPage = () => {
             <input
               type="text"
               name="Password"
-              className="form-control ml-3"
+              className="form-control "
+              style={{ marginLeft: "20px" }}
               placeholder="Enter Password"
             />
           </div>
         </form>
+        <div className="ml-5">
+          <Link to="/RegistrationForm">Click to Registration Conatact</Link>
+          <Link to="/ForgotPage" className="ml-5">
+            Forgot Password
+          </Link>
+        </div>
       </div>
     </div>
   );
